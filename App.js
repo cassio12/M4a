@@ -49,6 +49,9 @@ export default class App extends React.Component {
             <Text style={styles.text1}> {item.title}</Text>
             <Text style={styles.text1}>{item.rua}</Text>
             <Text style={styles.text1}>{item.horario}</Text>
+            <View style={styles.acaoSobreOng}>
+              <Text style={styles.descartar}>x</Text>
+            </View>
           </View>
         </View>  
       </View>
@@ -70,9 +73,7 @@ export default class App extends React.Component {
               renderItem={({item}) => this.listaRender(item )}/>
 
             </View>
-            <View style={styles.acaoSobreOng}>
-              <Text style={styles.descartar}>x</Text>
-            </View>
+           
           </ScrollView>
         </View>
     );
