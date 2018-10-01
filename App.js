@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, Image, ScrollView, FlatList, TextInput } from 'react-native';
-import {TabNavigator, StackNavigator} from 'react-navigation'
+import {TabNavigator, StackNavigator} from 'react-navigation';
 
+import Imagem from './source/components/Image';
+import Texts from './source/components/Texts';
+import Button from './source/components/Button';
 import OngScreen from './source/screens/ongScreen';
 
 class App extends Component {
@@ -9,20 +12,23 @@ class App extends Component {
   // static navigationOptions = ({navigation}) => ({
   //   title:'bem vindo'
   // })
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      Texts:''
+    }
+  }
   render() {
     
     return (
       <View style={styles.container}>
-        <View style={styles.containerLogin}>
-          <Image style={styles.logo} source={require('./source/assets/m4a.png')}/>
-          <View style={styles.boxInput}>
-            <Text>Log in</Text>
-            <TextInput style={styles.input} title='Email'/>
-            <TextInput style={styles.input} title='Password'/>
-            {/* <Button title="Log in" onPress={() => this.props.navigation.navigate('Ong') } /> */}
-          </View>
-        </View>
+          <Imagem />
+          <Texts text={30} value="Let´s create your new account" />
+          <Texts text={30} value="I am a ..."/>
+          <Button value="Volunteer"/>
+          <Button value="Organization"/>
+          <Texts text={14.5} value="By cliking Join now, you agree to the M4A User Agreement, Privacy Policy, and Cookie"/>
+          {/* <Button title="Log in" onPress={() => this.props.navigation.navigate('Ong') } /> */}
       </View>
     );
   }
@@ -33,38 +39,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,  
     width:'100%',
-    backgroundColor: '#38A800',
+    backgroundColor: '#FF7700',
     alignItems: 'center',
-    paddingTop: 20,
     flexDirection: 'column',
   },
-  containerLogin:{
-    width:'95%',
-    height:'90%',
-    borderRadius: 30,
-    backgroundColor: '#fff',
-  },
-  logo:{
-    width: '30%',
-    height: 100,
-    alignItems:'center',
-  },
-  input:{
-    width:'100%',
-    borderRadius:30,
-    borderWidth: 1,
-    borderColor: '#000',
-    borderStyle: 'dashed',
-  },
-  boxInput:{
-    width: '90%',
-    height:100,
-    alignSelf:'center',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    
-  },
-
+  
 });
 
 
