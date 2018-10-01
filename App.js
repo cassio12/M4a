@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <View style={styles.container}>
           <Imagem />
-          <Texts text={30} value="Let´s create your new account" />
+          <Texts text={25} value="Let´s create your new account" />
           <Texts text={30} value="I am a ..."/>
           <Button value="Volunteer"/>
           <Button value="Organization"/>
